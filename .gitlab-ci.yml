@@ -3,9 +3,21 @@ image: node:lts
 before_script:
   - npm install
 
-pages:
+stages:
+  - build
+
+build:
+  stage: build
   script:
     - npm run build
+  allow_failure: true
+
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r public/* .public
+    - mv .public public
   artifacts:
     paths:
       - public
