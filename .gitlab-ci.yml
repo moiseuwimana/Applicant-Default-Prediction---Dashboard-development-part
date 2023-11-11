@@ -1,14 +1,11 @@
-image: registry.gitlab.io/gitlab-org/cluster-integration/nginx-ingress:2.1
+image: node:lts
 
-stages:
-  - deploy
+before_script:
+  - npm install
 
 pages:
-  stage: deploy
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
+    - npm run build
   artifacts:
     paths:
       - public
