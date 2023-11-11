@@ -1,25 +1,6 @@
-image: node:lts
-
-before_script:
-  - npm install
-
-stages:
-  - build
-
-build:
-  stage: build
+build project:
+  image: node:15
   script:
-    - npm run build
-  allow_failure: true
-
-pages:
-  stage: deploy
-  script:
-    - mkdir .public
-    - cp -r public/* .public
-    - mv .public public
-  artifacts:
-    paths:
-      - public
-  only:
-    - main
+    - npm install
+    - npm test
+    - npm build
