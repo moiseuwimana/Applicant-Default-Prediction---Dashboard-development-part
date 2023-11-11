@@ -7,7 +7,7 @@ function NavBar({toggle}) {
         <a className="navbar-brand d-none d-lg-block" href="#">
           Dashboard
         </a>
-        <a className="navbar-brand d-block d-lg-none" onClick={toggle} >
+        <a className="navbar-brand d-block d-lg-none" onClick={toggle} href="#">
           <i className="bi bi-justify"></i>
         </a>
         <button
