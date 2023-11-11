@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import Home from "./components/Home/Home";
+import { Routes, Route } from "react-router-dom";
+import User from "./components/User/user";
+import Order from "./components/Order/Order";
+import MainLayout from "./layout/MainLayout/MainLayout";
+
+import { DataProvider } from "./components/API/DataContext";
+
+import { MyContextProvider } from "./components/API/MyContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContextProvider>
+      <DataProvider>
+        <MainLayout>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Home />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/users"
+              element={
+                <>
+                  <User />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/orders"
+              element={
+                <>
+                  <Order />
+                </>
+              }
+            ></Route>
+          </Routes>
+        </MainLayout>
+      </DataProvider>
+    </MyContextProvider>
   );
 }
 
