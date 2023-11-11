@@ -65,12 +65,12 @@ function SideBar({toggle}) {
       <div>
         <hr className="text-white" />
         <div className="nav-item p-2">
-          <a href="#" className="p-1 text-decoration-none text-white">
+          <button className="p-1 text-decoration-none text-white bg-transparent border-0">
             <i className="bi bi-person-circle me-3 fs-4"></i>
             <span className="fs-4">
               <strong>Moise</strong>
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

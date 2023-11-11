@@ -4,12 +4,12 @@ function NavBar({toggle}) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand d-none d-lg-block" href="#">
+        <button className="navbar-brand d-none d-lg-block">
           Dashboard
-        </a>
-        <a className="navbar-brand d-block d-lg-none" onClick={toggle} href="#">
+        </button>
+        <button className="bg-transparent border-0 navbar-brand d-block d-lg-none" onClick={toggle}>
           <i className="bi bi-justify"></i>
-        </a>
+        </button>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,20 +24,20 @@ function NavBar({toggle}) {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item border rounded">
-              <a className="nav-link text-white" aria-current="page" href="#">
+              <button className="nav-link text-white" aria-current="page">
                 <i className="bi bi-search"></i>
                 Search
-              </a>
+              </button>
             </li>
             <li className="nav-item mx-2 rounded border">
-              <a className="nav-link text-white" aria-current="page" href="#">
+              <button className="nav-link text-white" aria-current="page">
                 Account
-              </a>
+              </button>
             </li>
             <li className="nav-item border rounded">
-              <a className="nav-link text-white" aria-current="page" href="#">
+              <button className="nav-link text-white" aria-current="page">
                 Logout
-              </a>
+              </button>
             </li>
           </ul>
         </div>
