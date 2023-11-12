@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactApexChart from "react-apexcharts";
 import "./ApexPie.css";
 
@@ -7,54 +7,10 @@ import { useMyContext } from "../API/MyContext";
 
 function ApexPie() {
   const { data, loading, error } = useData();
-  const { selected } =
-    useMyContext();
 
-  let approvedColor = "rgba(0,150,0,1)";
-  let notApprovedColor = "rgba(200,0,0,1)";
-  if (selected) {
-    approvedColor =
-      selected === "Approved" ? "rgba(0,150,0,1)" : "rgba(0,150,0,0.1)";
-    notApprovedColor =
-      selected === "Not Approved" ? "rgba(200,0,0,1)" : "rgba(200,0,0,0.1)";
-  }
+  const {approvedColor,notApprovedColor} = useMyContext();
 
-  const [isSticky, setSticky] = useState(false);
-  const [initialOffset, setInitialOffset] = useState(0);
-  const stickyDivRef = React.createRef();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (stickyDivRef.current) {
-        const offset = stickyDivRef.current.offsetTop;
-        const isScrolledPast = window.scrollY >= offset;
-  
-        if (!isSticky && isScrolledPast) {
-          setSticky(true);
-          setInitialOffset(offset);
-        } else if (isSticky && window.scrollY < initialOffset) {
-          setSticky(false);
-        }
-      }
-    };
-  
-    // Register event listeners for scrolling
-    const registerScrollEvents = () => {
-      if (stickyDivRef.current) {
-        setInitialOffset(stickyDivRef.current.offsetTop);
-        window.addEventListener("scroll", handleScroll);
-      }
-    };
-  
-    // Deregister the event listener when the component unmounts
-    const deregisterScrollEvents = () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  
-    registerScrollEvents(); // Register events
-  
-    return deregisterScrollEvents; // Deregister events on unmount
-  }, [stickyDivRef, isSticky, initialOffset]);
 
   if (data) {
     const options = {
@@ -73,8 +29,12 @@ function ApexPie() {
       legend: {
         show: false,
       },
+      colors: [approvedColor,notApprovedColor] // tooltip background color
+      
     };
     const series = Object.values(data["Loan Status"]);
+
+
 
     return (
       <div className="row">

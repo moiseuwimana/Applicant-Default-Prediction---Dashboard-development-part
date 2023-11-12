@@ -9,6 +9,8 @@ import "./Home.css";
 
 import TargetButtons from "./TargetButtons";
 
+import PieChart from "../Charts/Pie";
+
 
 
 
@@ -102,6 +104,8 @@ function Home() {
             <ApexBar ref={childRef} />
           </div>
         </div>
+
+        <PieChart />
       </div>
     </div>
   );
