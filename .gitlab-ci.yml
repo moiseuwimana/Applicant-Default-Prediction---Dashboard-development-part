@@ -13,7 +13,7 @@ build-pages:
   script:
     - rm -rf build
     - CI=false npm install
-    # - CI=false npm run build
+    - CI=false npm run build
     - rm -rf public
     - cp build/index.html build/404.html
     - mv build public
@@ -25,6 +25,7 @@ pages:
   stage: deploy
   script:
     - ls
+    - rm -rf public/src
   artifacts:
     paths:
       - public

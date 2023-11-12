@@ -4,7 +4,7 @@ function NavBar({toggle}) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <button className="navbar-brand d-none d-lg-block">
+        <button className="navbar-brand d-none d-lg-block bg-transparent border-0">
           Dashboard
         </button>
         <button className="bg-transparent border-0 navbar-brand d-block d-lg-none" onClick={toggle}>
