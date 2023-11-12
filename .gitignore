@@ -8,8 +8,11 @@
 # testing
 /coverage
 
-# production
-/build
+# # production
+# /build
+
+# code used for development
+/src
 
 # misc
 .DS_Store
