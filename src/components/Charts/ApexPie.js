@@ -7,7 +7,7 @@ import { useMyContext } from "../API/MyContext";
 
 function ApexPie() {
   const { data, loading, error } = useData();
-  const { seriesVisibility, toggleDataSeries, resetBar, selected } =
+  const { selected } =
     useMyContext();
 
   let approvedColor = "rgba(0,150,0,1)";

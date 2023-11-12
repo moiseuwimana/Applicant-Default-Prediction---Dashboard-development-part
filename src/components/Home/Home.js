@@ -1,6 +1,4 @@
 import React, { useRef } from "react";
-import LineChart from "../Charts/LineChart";
-import PieChart from "../Charts/PieChart";
 
 import ApexPie from "../Charts/ApexPie";
 
@@ -24,8 +22,7 @@ function Home() {
     childRef.current.resetBar();
   };
 
-  const { seriesVisibility, toggleDataSeries, resetBar, selected } =
-    useMyContext();
+
 
   return (
     <div className="p-3 bg-light">

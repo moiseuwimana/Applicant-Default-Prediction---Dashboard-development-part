@@ -7,7 +7,7 @@ const TargetButtons = () => {
   const [isSticky, setSticky] = useState(false);
   const initialOffset = useRef(0); // Use useRef for initialOffset
   const stickyDivRef = useRef(null);
-  const { seriesVisibility, toggleDataSeries, resetBar, selected } =
+  const { seriesVisibility, toggleDataSeries, resetBar} =
     useMyContext();
 
   useEffect(() => {
