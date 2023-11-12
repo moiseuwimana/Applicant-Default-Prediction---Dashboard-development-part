@@ -41,7 +41,7 @@ function Home() {
                     <i class="bi bi-person-fill fs-1"></i>
                     <div>
                       <span className="text-muted small-text">Applicants</span>
-                      <h2>234</h2>
+                      <h2>1000</h2>
                     </div>
                   </div>
                 </div>
