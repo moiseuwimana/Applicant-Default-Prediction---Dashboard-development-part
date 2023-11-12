@@ -6,7 +6,7 @@ import ApexBar from "../Charts/ApexBar";
 
 import "./Home.css";
 
-import { useMyContext } from "../API/MyContext";
+
 import TargetButtons from "./TargetButtons";
 
 

@@ -1,4 +1,4 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import React, { forwardRef, useImperativeHandle } from "react";
 import ReactApexChart from "react-apexcharts";
 import { useData } from "../API/DataContext";
 import "./ApexBar.css";
@@ -6,7 +6,7 @@ import { useMyContext } from "../API/MyContext";
 
 const ApexBar = forwardRef((props, ref) => {
   const { data, loading, error } = useData();
-  const { seriesVisibility, toggleDataSeries, resetBar, selected } =
+  const { seriesVisibility, toggleDataSeries, resetBar } =
     useMyContext();
 
   // Expose the childFunction to the parent component through the ref

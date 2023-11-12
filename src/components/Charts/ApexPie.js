@@ -24,16 +24,11 @@ function ApexPie() {
   const stickyDivRef = React.createRef();
 
   useEffect(() => {
-    // Set the initial offset on the initial render
-    if (stickyDivRef.current) {
-      setInitialOffset(stickyDivRef.current.offsetTop);
-    }
-
     const handleScroll = () => {
       if (stickyDivRef.current) {
         const offset = stickyDivRef.current.offsetTop;
         const isScrolledPast = window.scrollY >= offset;
-
+  
         if (!isSticky && isScrolledPast) {
           setSticky(true);
           setInitialOffset(offset);
@@ -42,11 +37,24 @@ function ApexPie() {
         }
       }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
+  
+    // Register event listeners for scrolling
+    const registerScrollEvents = () => {
+      if (stickyDivRef.current) {
+        setInitialOffset(stickyDivRef.current.offsetTop);
+        window.addEventListener("scroll", handleScroll);
+      }
+    };
+  
+    // Deregister the event listener when the component unmounts
+    const deregisterScrollEvents = () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isSticky, initialOffset]);
+  
+    registerScrollEvents(); // Register events
+  
+    return deregisterScrollEvents; // Deregister events on unmount
+  }, [stickyDivRef, isSticky, initialOffset]);
 
   if (data) {
     const options = {
