@@ -5,9 +5,34 @@
 }
 
 .sticky {
-  position: fixed;
-  margin-left: -28.5px;
+  /* position: fixed; */
+
+  margin-top: 55px; /*nav bar height*/
   /* top: 0; */
   /* width: 100%; */
   /* z-index: 100; */
+  margin-left: -33px;
 }
+.not-sticky{
+  gap: 26px,
+}
+.replace-sticky{
+  padding: 28px
+}
+.sticky-custom-width-btn {
+  width: 80px; /*Set your desired width*/
+  margin-left:0px;
+  padding:0px
+}
+.custom-width-btn {
+  width: 80px; /*Set your desired width*/
+  margin-right:10px;
+}
+
+.my-container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px; 
+  padding-left: 15px; 
+}
+

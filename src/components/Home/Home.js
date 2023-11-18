@@ -1,18 +1,14 @@
 import React, { useRef } from "react";
 
-import ApexPie from "../Charts/ApexPie";
+import ApexPie from "./Charts/ApexPie";
 
-import ApexBar from "../Charts/ApexBar";
+import ApexBar from "./Charts/ApexBar";
 
 import "./Home.css";
 
-
 import TargetButtons from "./TargetButtons";
 
-import PieChart from "../Charts/Pie";
-
-
-
+import { useData } from "../API/DataContext";
 
 function Home() {
   const childRef = useRef();
@@ -23,12 +19,10 @@ function Home() {
   const triggerChildFunction_reset = () => {
     childRef.current.resetBar();
   };
-
-
+  const { data } = useData();
 
   return (
     <div className="p-3 bg-light">
-      
       <div className="container-fluid">
         <div className="row justify-content-center g-2">
           <div className="col-sm-4">
@@ -43,7 +37,10 @@ function Home() {
                     <i class="bi bi-person-fill fs-1"></i>
                     <div>
                       <span className="text-muted small-text">Applicants</span>
-                      <h2>1000</h2>
+                      <h2>
+                        {data["Loan Status"]["Approved"] +
+                          data["Loan Status"]["Not Approved"]}
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -63,7 +60,7 @@ function Home() {
                     <i class="bi bi-person-fill fs-1"></i>
                     <div>
                       <span className="text-muted small-text">Approved</span>
-                      <h2>234</h2>
+                      <h2>{data["Loan Status"]["Approved"]}</h2>
                     </div>
                   </div>
                 </div>
@@ -85,7 +82,7 @@ function Home() {
                       <span className="text-muted  small-text">
                         Not approved
                       </span>
-                      <h2>234</h2>
+                      <h2>{data["Loan Status"]["Not Approved"]}</h2>
                     </div>
                   </div>
                 </div>
@@ -94,10 +91,12 @@ function Home() {
           </div>
         </div>
 
-        <div className="d-md-none"><TargetButtons /></div>
+        <div className="d-sm-none">
+          <TargetButtons />
+        </div>
 
         <div className="row">
-          <div className="col-12 col-md-6 p-3">
+          <div className="col-12 col-md-6 p-4">
             <ApexPie />
           </div>
           <div className="col-12 col-md-6 p-3">
@@ -105,7 +104,7 @@ function Home() {
           </div>
         </div>
 
-        <PieChart />
+        {/* <PieChart /> */}
       </div>
     </div>
   );

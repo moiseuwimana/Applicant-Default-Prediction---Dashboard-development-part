@@ -9,5 +9,23 @@
 .active {
   background-color: rgb(117,117,117);
   border-radius: 5px;
-  color: white;
+  color: rgb(255, 255, 255);
+}
+
+
+
+.logo{
+  background-color: #00b7ff;
+  border-radius: 23px;
+}
+.project-title{
+  color: #00b7ff;
+}
+
+
+.sticky-block {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  /* padding: 20px; */
 }

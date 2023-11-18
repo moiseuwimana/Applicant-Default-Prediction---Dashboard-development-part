@@ -14,7 +14,7 @@
   height: 100%
 }
 .card-hover-shadow:hover {
-  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
 }
 .custom-card-title {
@@ -42,12 +42,12 @@
 
 
 .card1-hover:hover {
-  box-shadow: 0 0 3px rgba(0, 150, 0, 1); /* Blue shadow */
+  box-shadow: 1px 1px 5px rgba(0, 150, 0, 0.5); /* Blue shadow */
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .card2-hover:hover {
-  box-shadow: 0 0 3px rgba(200, 0, 0, 1); /* Yellow shadow */
+  box-shadow: 1px 1px 5px rgba(200, 0, 0, 0.5); /* Yellow shadow */
   transition: box-shadow 0.3s ease-in-out;
 }
 

@@ -2,17 +2,26 @@ import React from "react";
 
 import Home from "./components/Home/Home";
 import { Routes, Route } from "react-router-dom";
-import User from "./components/User/user";
-import Order from "./components/Order/Order";
+import Report from "./components/Report/Report";
+
+
+
+import Records from "./components/Records/Records";
+import Records2 from "./components/Records/Records2";
+
+
+
 import MainLayout from "./layout/MainLayout/MainLayout";
 
 import { DataProvider } from "./components/API/DataContext";
 
-import { MyContextProvider } from "./components/API/MyContext";
+import { IdentifiersProvider } from "./components/API/IdentifiersContext";
+
+import Table from "./components/Records/Table";
 
 function App() {
   return (
-    <MyContextProvider>
+    <IdentifiersProvider>
       <DataProvider>
         <MainLayout>
           <Routes>
@@ -25,25 +34,27 @@ function App() {
               }
             ></Route>
             <Route
-              path="/users"
+              path="/report"
               element={
                 <>
-                  <User />
+                  <Report />
                 </>
               }
             ></Route>
             <Route
-              path="/orders"
+              path="/records"
               element={
                 <>
-                  <Order />
+                  {/* <Table /> */}
+                  <Records2 />
+                  {/* <Records /> */}
                 </>
               }
             ></Route>
           </Routes>
         </MainLayout>
       </DataProvider>
-    </MyContextProvider>
+    </IdentifiersProvider>
   );
 }
 

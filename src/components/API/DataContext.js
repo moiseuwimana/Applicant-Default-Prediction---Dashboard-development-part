@@ -1,14 +1,7 @@
 // DataContext.js
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from "react";
 
 const DataContext = createContext();
-
-export function useData() {
-  return useContext(DataContext);
-}
-
-
-
 
 export function DataProvider({ children }) {
   const [data, setData] = useState(null);
@@ -17,13 +10,14 @@ export function DataProvider({ children }) {
 
   useEffect(() => {
     // Define the URL of the API you want to fetch data from
-    const apiUrl = 'https://moiseuwimana.github.io/Loan-approval-prediction---dataAPI-part/data.json';
+    const apiUrl =
+      "https://moiseuwimana.github.io/Loan-approval-prediction---dataAPI-part/data.json";
 
     // Use the fetch function to make the API request
     fetch(apiUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
@@ -38,9 +32,22 @@ export function DataProvider({ children }) {
       });
   }, []); // The empty dependency array ensures that this effect runs only once on mount
 
-  return (
-    <DataContext.Provider value={{ data, loading, error }}>
-      {children}
-    </DataContext.Provider>
-  );
+  if (error) {
+    console.log("Erro: ");
+  }
+  if (loading) {
+    console.log("Loading data...");
+  }
+  if (data) {
+    return (
+      <DataContext.Provider value={{ data}}>
+        {children}
+      </DataContext.Provider>
+    );
+  }
+}
+
+
+export function useData() {
+  return useContext(DataContext);
 }

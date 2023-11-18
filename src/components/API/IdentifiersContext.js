@@ -1,16 +1,12 @@
 import React, { createContext, useContext, useState } from 'react';
 
 // Create a context
-const MyContext = createContext();
+const IdentifiersContext = createContext();
 
-// Create a custom hook to easily access the context
-export function useMyContext() {
-  return useContext(MyContext);
-}
 
 
 // Create a provider component
-export function MyContextProvider({ children }) {
+export function IdentifiersProvider({ children }) {
   const [selected, setSelected] = useState('');
   const [seriesVisibility, setSeriesVisibility] = useState({
     'Approved': true,
@@ -42,8 +38,15 @@ export function MyContextProvider({ children }) {
   }
 
   return (
-    <MyContext.Provider value={{ seriesVisibility, toggleDataSeries, resetBar, selected, approvedColor, notApprovedColor }}>
+    <IdentifiersContext.Provider value={{ seriesVisibility, toggleDataSeries, resetBar, selected, approvedColor, notApprovedColor }}>
       {children}
-    </MyContext.Provider>
+    </IdentifiersContext.Provider>
   );
+}
+
+
+
+// Create a custom hook to easily access the context
+export function useIdentifiers() {
+  return useContext(IdentifiersContext);
 }

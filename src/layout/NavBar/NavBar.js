@@ -2,7 +2,7 @@ import React from "react";
 
 function NavBar({toggle}) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container-fluid">
         <button className="navbar-brand d-none d-lg-block bg-transparent border-0">
           Dashboard
@@ -24,18 +24,7 @@ function NavBar({toggle}) {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item border rounded">
-              <button className="nav-link text-white" aria-current="page">
-                <i className="bi bi-search"></i>
-                Search
-              </button>
-            </li>
-            <li className="nav-item mx-2 rounded border">
-              <button className="nav-link text-white" aria-current="page">
-                Account
-              </button>
-            </li>
-            <li className="nav-item border rounded">
-              <button className="nav-link text-white" aria-current="page">
+              <button className="btn btn-outline-primary nav-link" aria-current="page">
                 Logout
               </button>
             </li>
