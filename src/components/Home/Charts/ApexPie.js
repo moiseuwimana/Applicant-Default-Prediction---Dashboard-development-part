@@ -38,7 +38,7 @@ function ApexPie() {
             options={options}
             series={series}
             type="pie"
-            height={300}
+            height={250}
           />
         </div>
       </div>

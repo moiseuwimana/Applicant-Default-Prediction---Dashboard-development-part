@@ -2,6 +2,12 @@ import React from "react";
 import CoefficientBarChart from "./CoefficientBarChart";
 import "./Report.css";
 import CoefficientBarChartMobile from "./CoefficientBarChartMobile";
+import creditImg from "./credit_score.jpg";
+import educationImg from "./graduation.jpg";
+import familyImg from "./family.jpg";
+import marriageImg from "./marriage.jpg";
+import incomeImg from "./income.jpeg";
+import neighborhoodImg from './neighborhood.jpg'
 
 const Report = () => {
   return (
@@ -24,9 +30,7 @@ const Report = () => {
       </div>
 
       <div className="row">
-        <h2 className="text-center text-muted text-lg-start my-4">
-          Objective
-        </h2>
+        <h2 className="text-center text-muted text-lg-start my-4">Objective</h2>
         <p>
           The primary goal of this project is to develop a robust and accurate
           predictive model that helps financial institutions identify potential
@@ -54,7 +58,11 @@ const Report = () => {
             <div className="card-body">
               <h5 className="card-title">About chart</h5>
               <p>
-              The bar chart displays the influence of various features. When a bar points up, it means that the corresponding feature has a positive effect on getting a loan. On the other hand, if a bar points down, it indicates that the feature has a negative impact on being approved for a loan.
+                The bar chart displays the influence of various features. When a
+                bar points up, it means that the corresponding feature has a
+                positive effect on getting a loan. On the other hand, if a bar
+                points down, it indicates that the feature has a negative impact
+                on being approved for a loan.
               </p>
             </div>
           </div>
@@ -63,7 +71,7 @@ const Report = () => {
 
       <div className="row my-5 ">
         <h2 className="text-center text-muted text-lg-start my-4">
-          Interpretation  & Recommendations
+          Interpretation & Recommendations
         </h2>
         <p>
           Based on the coefficients, prioritize features with higher positive
@@ -75,9 +83,12 @@ const Report = () => {
 
       <div className="row ustify-content-center g-2">
         <div className="col-md-6 col-lg-5 col-xl-4">
-          <div className="card card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height">
+          <div className="card card-hover-shadow p mb-5 bg-body rounded card-equal-height">
+            <div className="inner">
+              <img className="card-img-top" src={creditImg} />
+            </div>
             <div className="card-body">
-              <h5 className="card-title">1. Credit History</h5>
+              <h5 className="card-title text-center">1. Credit History</h5>
               <p>
                 Focus attention on applicants with a lower 'Credit History,' as
                 this factor carries a substantial negative influence on the
@@ -88,9 +99,14 @@ const Report = () => {
           </div>
         </div>
         <div className="col-md-6 col-lg-5 col-xl-4">
-          <div className="card card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height">
+          <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
+            <div className="inner">
+              <img className="card-img-top" src={educationImg} />
+            </div>
             <div className="card-body">
-              <h5 className="card-title">2. Educational background</h5>
+              <h5 className="card-title text-center">
+                2. Educational background
+              </h5>
               <p>
                 Applicants with higher educational levels, indicated by a
                 positive influence, may have a lower risk of default.
@@ -99,9 +115,12 @@ const Report = () => {
           </div>
         </div>
         <div className="col-md-6 col-lg-5 col-xl-4">
-          <div className="card card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height">
+          <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
+            <div className="inner">
+              <img className="card-img-top" src={familyImg} />
+            </div>
             <div className="card-body">
-              <h5 className="card-title">3. Dependents</h5>
+              <h5 className="card-title text-center">3. Dependents</h5>
               <p>
                 The number of dependents someone has is a big factor in our
                 prediction. If an applicant has more dependents, it seems to
@@ -113,9 +132,12 @@ const Report = () => {
           </div>
         </div>
         <div className="col-md-6 col-lg-5 col-xl-4">
-          <div className="card card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height">
+          <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
+            <div className="inner">
+              <img className="card-img-top" src={marriageImg} />
+            </div>
             <div className="card-body">
-              <h5 className="card-title">4. Marital Status</h5>
+              <h5 className="card-title text-center">4. Marital Status</h5>
               <p>
                 Consider the 'Married' status of applicants, as it exhibits a
                 noteworthy negative influence. Married individuals, according to
@@ -125,9 +147,12 @@ const Report = () => {
           </div>
         </div>
         <div className="col-md-6 col-lg-5 col-xl-4">
-          <div className="card card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height">
+          <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
+            <div className="inner">
+              <img className="card-img-top" src={incomeImg} />
+            </div>
             <div className="card-body">
-              <h5 className="card-title">5. Financial Metrics</h5>
+              <h5 className="card-title text-center">5. Financial Metrics</h5>
               <p>
                 Pay close attention to financial metrics such as 'Applicant
                 Income,' 'Coapplicant Income,' 'Loan Amount,' and 'Loan Amount
@@ -137,9 +162,12 @@ const Report = () => {
           </div>
         </div>
         <div className="col-md-6 col-lg-5 col-xl-4">
-          <div className="card card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height">
+          <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
+            <div className="inner">
+              <img className="card-img-top" src={neighborhoodImg} />
+            </div>
             <div className="card-body">
-              <h5 className="card-title">6. Property Area</h5>
+              <h5 className="card-title text-center">6. Property Area</h5>
               <p>
                 While 'Property Area' exhibits a positive influence, it's a
                 relatively minor factor in comparison to the others.

@@ -274,15 +274,15 @@ function Records2() {
           </div>
         </div>
 
-        <div className="row">
-          <span className="col-lg-4">
+        <div className="row mt-2">
+          <span className="col-lg-4 mb-2">
             Page{" "}
             <strong>
               {pageIndex + 1} of {pageOptions.length}
             </strong>{" "}
           </span>
 
-          <span className="col-lg-4">
+          <span className="col-lg-4 mb-3">
             | Go to page:{" "}
             <input
               className="form-control d-inline custom-height"
@@ -294,16 +294,16 @@ function Records2() {
                   : 0;
                 gotoPage(newPageIndex);
               }}
-              style={{ width: "50px" }}
+              style={{ width: "50px", height: "30px" }}
             />
           </span>
 
               {/* <select value={pageSize}></select> */}
 
 
-          <div className="col-lg-4">
+          <div className="col-lg-4 mb-4">
             <button
-              className="btn btn-sm btn-outline-primary"
+              className="btn btn-sm btn-outline-success me-1"
               onClick={() => gotoPage(0)}
               disabled={!canPreviousPage}
             >
@@ -311,7 +311,7 @@ function Records2() {
             </button>
 
             <button
-              className="btn btn-sm btn-outline-primary me-3"
+              className="btn btn-sm btn-outline-success me-4"
               onClick={() => previousPage()}
               disabled={!canPreviousPage}
             >
@@ -319,7 +319,7 @@ function Records2() {
             </button>
 
             <button
-              className="btn btn-sm btn-outline-primary"
+              className="btn btn-sm btn-outline-success me-1"
               onClick={() => nextPage()}
               disabled={!canNextPage}
             >
@@ -327,7 +327,7 @@ function Records2() {
             </button>
 
             <button
-              className="btn btn-sm btn-outline-primary"
+              className="btn btn-sm btn-outline-success"
               onClick={() => gotoPage(pageCount - 1)}
               disabled={!canNextPage}
             >

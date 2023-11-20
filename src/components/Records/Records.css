@@ -31,7 +31,7 @@ table th, tfoot td {
 .table-container td:nth-child(13){
   position: sticky;
   right:0;
-  background-color: #91cff8;
+  background-color: rgb(218, 250, 218);
 }
 
 
@@ -42,9 +42,19 @@ table th, tfoot td {
 }
 /* Custom styling for the input field */
 .custom-input {
-  border: 1px solid #007bff; /* Border color */
+  border: 1px solid rgb(218, 250, 218);; /* Border color */
   border-radius: 10px; /* Border radius for curved corners */
   padding: 10px; /* Padding */
   height: 25px;
   width: 130px;
+}
+
+/* Normal state */
+input[type="checkbox"] {
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.5);
+}
+
+/* Checked state */
+input[type="checkbox"]:checked {
+  box-shadow: 2px 2px 5px rgba(0, 128, 0, 0.5); /* Change color to green */
 }

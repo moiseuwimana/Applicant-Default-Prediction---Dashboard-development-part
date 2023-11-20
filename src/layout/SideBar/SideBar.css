@@ -1,25 +1,34 @@
 .sidebar ul li:hover {
-  background-color: rgb(117,117,117);
-  border-radius: 5px;
+  background-color: rgba(0,200,0,0.1);
+  border-radius: 55px;
   cursor: pointer;
 }
 .sidebar ul li:hover a {
   color: white;
 }
 .active {
-  background-color: rgb(117,117,117);
-  border-radius: 5px;
+  background-color: #62d404;
+  border-radius: 55px;
   color: rgb(255, 255, 255);
 }
 
 
 
 .logo{
-  background-color: #00b7ff;
   border-radius: 23px;
+  background-color: #62d404;
+  width: 30px !important;
+  height: 30px;
 }
+.logo:hover {
+  background-color: #6ff502; /* Adjust the desired width on hover */
+}
+
 .project-title{
-  color: #00b7ff;
+  color: #62d404;
+}
+.project-title:hover{
+  color: #6ff502;
 }
 
 

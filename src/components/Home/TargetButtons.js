@@ -7,7 +7,7 @@ const TargetButtons = () => {
   const [isSticky, setSticky] = useState(false);
   const initialOffset = useRef(0); // Using useRef for initialOffset. PURPOSE: holding numerical offset data
   const stickyDivRef = useRef(null); // initiate to point to any DOM element is prepared to reference a DOM element later when the component renders. PURPOSE: Referencing a DOM element.
-  const { seriesVisibility, toggleDataSeries, resetBar } = useIdentifiers();
+  const { seriesVisibility, toggleDataSeries, resetBar, approvedColor, notApprovedColor} = useIdentifiers();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,19 +34,32 @@ const TargetButtons = () => {
   }, [isSticky, initialOffset]);
 
   return (
-    <div className="container-fluid ">
+    <div className="container-fluid">
       <div className="container-fluid ">
         <div
           ref={stickyDivRef}
-          className={`row justify-content-center ${
-            isSticky ? "sticky" : "not-sticky mt-4"
+          className={`row bg-light justify-content-center not-sticky  ${
+            isSticky ? "sticky" : "mt-4"
           }`}
         >
+          <div className="col-4 p-0 justify-content-center d-flex">
+            <div
+              className={`btn btn-sm  bg-light text-center ${
+                isSticky ? "sticky-custom-width-btn" : "custom-width-btn"
+              }`}
+              style={{ border: "2px solid rgba(0,0,0,0.2)",height: '50px' }}
+              onClick={resetBar}
+            >
+              All
+            </div>
+          </div>
+
+
           {["Approved", "Not Approved"].map((seriesName) => {
             const borderColor =
               seriesName === "Approved"
-                ? "2px solid rgb(0,150,0,0.2)"
-                : "2px solid rgb(200,0,0,0.2)";
+                ? `2px solid ${approvedColor}`
+                : `2px solid ${notApprovedColor}`;
 
             const style = {
               cursor: "pointer",
@@ -61,7 +74,7 @@ const TargetButtons = () => {
 
             return (
               <div
-                className="col-4 p-0"
+                className="col-4 p-0 d-flex justify-content-center"
                 key={seriesName}
                 onClick={() => toggleDataSeries(seriesName)}
               >
@@ -75,17 +88,8 @@ const TargetButtons = () => {
               </div>
             );
           })}
-          <div className="col-4 p-0">
-            <div
-              className={`btn btn-sm  bg-light text-center ${
-                isSticky ? "sticky-custom-width-btn" : "custom-width-btn"
-              }`}
-              style={{ border: "2px solid rgba(0,0,0,0.2)",height: '50px' }}
-              onClick={resetBar}
-            >
-              All
-            </div>
-          </div>
+
+          
         </div>
 
         {/**div to take place of button when sticks */}

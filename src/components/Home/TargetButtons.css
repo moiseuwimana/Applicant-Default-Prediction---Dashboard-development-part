@@ -11,13 +11,13 @@
   /* top: 0; */
   /* width: 100%; */
   /* z-index: 100; */
-  margin-left: -33px;
+  margin-left: -53px;
 }
 .not-sticky{
   gap: 26px,
 }
 .replace-sticky{
-  padding: 28px
+  padding: 35px
 }
 .sticky-custom-width-btn {
   width: 80px; /*Set your desired width*/

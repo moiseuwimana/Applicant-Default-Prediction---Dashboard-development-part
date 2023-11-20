@@ -6,7 +6,7 @@ import Report from "./components/Report/Report";
 
 
 
-import Records from "./components/Records/Records";
+
 import Records2 from "./components/Records/Records2";
 
 
@@ -17,7 +17,7 @@ import { DataProvider } from "./components/API/DataContext";
 
 import { IdentifiersProvider } from "./components/API/IdentifiersContext";
 
-import Table from "./components/Records/Table";
+
 
 function App() {
   return (

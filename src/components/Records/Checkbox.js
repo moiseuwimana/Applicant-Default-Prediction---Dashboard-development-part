@@ -9,7 +9,7 @@ export const Checkbox = React.forwardRef(({ indeterminate, ...rest },ref)=>{
   },[resolvedRef, indeterminate])
   return(
     <>
-      <input type='checkbox' ref={resolvedRef} {...rest} />
+      <input type='checkbox' ref={resolvedRef} {...rest}/>
     </>
   )
 }

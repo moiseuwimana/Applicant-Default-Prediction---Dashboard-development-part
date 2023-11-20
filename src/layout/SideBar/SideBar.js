@@ -23,16 +23,19 @@ function SideBar({ toggle }) {
 
   return (
     <div
-      className={`${display} sidebar justify-content-between flex-column bg-dark text-white py-3 ps-3 pe-5 vh-100 sticky-block`}
+      className={`${display} sidebar justify-content-between flex-column bg-dark text-white py-3 ps-3 pe-4 vh-100 sticky-block`}
     >
       <div className="align-item-center">
-        <Link to="/" className=" text-decoration-none text-white">
+        <Link to="/" className=" text-decoration-none text-white d-flex align-items-center">
           <img
-            className="text-primary logo"
+            className="logo"
             src={logo}
-            style={{ width: "33px" }}
+            style={{ width: "33px", transition: "width 0.3s" }}
+            alt="Logo"
           />
-          <span className="ms-3 project-title">Loan Management</span>
+          <span className="ms-3 project-title">
+            <strong>Loan Management</strong>
+          </span>
         </Link>
         <hr className="text-white mt-2" />
         <ul className="nav nav-pills flex-column mt-3">
@@ -41,10 +44,12 @@ function SideBar({ toggle }) {
             onClick={(e) => setActive(1)}
           >
             <Link to="/" className="p-1 text-decoration-none text-white">
-              <i className="bi bi-speedometer2 me-3 fs-4 "></i>
-              <span className="fs-6">
-                <strong>Dashboard</strong>
-              </span>
+              <div className="row">
+                <i className="bi bi-speedometer2 me-3 fs-4  d-flex justify-content-center"></i>
+                <span className="fs-6 d-flex justify-content-center">
+                  <strong>Dashboard</strong>
+                </span>
+              </div>
             </Link>
           </li>
           <li
@@ -52,10 +57,12 @@ function SideBar({ toggle }) {
             onClick={(e) => setActive(3)}
           >
             <Link to="/records" className="p-1 text-decoration-none text-white">
-              <i className="bi bi-table me-3 fs-4"></i>
-              <span className="fs-6">
-                <strong>Records</strong>
-              </span>
+              <div className="row">
+                <i className="bi bi-table me-3 fs-4 d-flex justify-content-center"></i>
+                <span className="d-flex justify-content-center fs-6">
+                  <strong>Records</strong>
+                </span>
+              </div>
             </Link>
           </li>
           <li
@@ -63,10 +70,12 @@ function SideBar({ toggle }) {
             onClick={(e) => setActive(4)}
           >
             <Link to="/report" className="p-1 text-decoration-none text-white">
-              <i className="bi bi-grid me-3 fs-4"></i>
-              <span className="fs-6">
-                <strong>Report</strong>
-              </span>
+              <div className="row">
+                <i class="bi bi-book-half me-3 fs-4 d-flex justify-content-center"></i>
+                <span className="fs-6 justify-content-center d-flex">
+                  <strong>Report</strong>
+                </span>
+              </div>
             </Link>
           </li>
         </ul>
@@ -75,7 +84,7 @@ function SideBar({ toggle }) {
       <div>
         <hr className="text-white" />
         <div className="nav-item p-2">
-          <button className="p-1 text-decoration-none text-white bg-transparent border-0">
+          <button className="p-1 text-decoration-none text-white bg-transparent border-0 d-flex justify-content-center">
             <i className="bi bi-person-circle me-3 fs-4"></i>
             <span className="fs-4">
               <strong>Moise</strong>

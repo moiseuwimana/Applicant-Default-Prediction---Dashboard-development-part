@@ -4,7 +4,7 @@ import { useData } from "../../API/DataContext";
 import "./ApexBar.css";
 import { useIdentifiers } from "../../API/IdentifiersContext";
 
-const ApexBar = forwardRef((props, ref) => {
+const ApexBar = forwardRef(({feature}, ref) => {
   const { data } = useData();
   const { seriesVisibility, toggleDataSeries, resetBar } = useIdentifiers();
 
@@ -14,13 +14,14 @@ const ApexBar = forwardRef((props, ref) => {
     resetBar,
   }));
 
-  const categories = Object.keys(data["Property Area and Loan Status"]);
+
+
+  const categories = Object.keys(data[feature]);
   const updatedSeries = [
     {
       name: "Approved",
       data: Object.values(
-        data["Loan Status Based on Property Area"]["Approved"]
-      ),
+        data[feature]).map(item=>item['Approved']),
       color: seriesVisibility["Approved"]
         ? "rgba(0,150,0,1)"
         : "rgba(0,150,0,0.1)",
@@ -28,22 +29,24 @@ const ApexBar = forwardRef((props, ref) => {
     {
       name: "Not Approved",
       data: Object.values(
-        data["Loan Status Based on Property Area"]["Not Approved"]
-      ),
+        data[feature]).map(item=>item['Not Approved']),
       color: seriesVisibility["Not Approved"]
         ? "rgba(200,0,0,1)"
         : "rgba(200,0,0,0.1)",
     },
   ];
 
+ 
   const options = {
     xaxis: {
       categories: categories,
     },
     yaxis: {
       min: 0,
-      max: 200,
-    },
+      max: 450,
+      title:{
+        text: 'Applicants'
+    },},
     fill: {
       colors: updatedSeries.map((series) => series.color),
     },
@@ -53,10 +56,22 @@ const ApexBar = forwardRef((props, ref) => {
     plotOptions: {
       bar: {
         columnWidth: "30",
-      },
+        borderRadius: 5,
+        dataLabels: {
+          position: 'top'
+        }
+      }
+    },
+    dataLabels: {
+      enabled: true,
+      offsetY: -20,
+      style: {
+        fonstSize:'12px',
+        colors: updatedSeries.map((series) => series.color)
+      }
     },
     title: {
-      text: "Loan Status Based on the Property Area",
+      text: `${feature}`,
       align: "center",
       offsetY: 0,
     },

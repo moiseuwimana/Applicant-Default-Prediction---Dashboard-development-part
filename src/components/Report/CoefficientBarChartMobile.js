@@ -4,7 +4,11 @@ import ReactApexChart from 'react-apexcharts';
 
 function CoefficientBarChartMobile() {
   const {data} = useData()
-  console.log('gggggg',Object.values(data['standardized feature importance']))
+
+  // Determine colors based on positive (green) and negative (red) values
+  const colors = Object.values(data['standardized feature importance']).map(value => (value < 0 ? '#FF0000' : '#00FF00'));
+
+  console.log('colorscolors',colors)
 
   const chartData = {
     options: {
@@ -29,7 +33,7 @@ function CoefficientBarChartMobile() {
           dataLabels: {
             position: 'top'
           }
-        }
+        },
       },
       dataLabels: {
         enabled: false,
@@ -54,6 +58,8 @@ function CoefficientBarChartMobile() {
           },
         },
       },
+      colors:['#00D000']
+      
 
     },
     series: [

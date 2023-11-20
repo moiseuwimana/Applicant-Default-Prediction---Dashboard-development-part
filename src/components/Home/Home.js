@@ -9,8 +9,14 @@ import "./Home.css";
 import TargetButtons from "./TargetButtons";
 
 import { useData } from "../API/DataContext";
+import { useIdentifiers } from "../API/IdentifiersContext";
+
+import DonutChartWithImage from "./Charts/DonutChartWithImage";
+import femaleIcon from "./female.png";
+import maleIcon from "./male.png";
 
 function Home() {
+  const { approvedColor, notApprovedColor } = useIdentifiers();
   const childRef = useRef();
   // Function to trigger the function in ChildComponent
   const triggerChildFunction = (cardName) => {
@@ -36,7 +42,7 @@ function Home() {
                   <div className="d-flex justify-content-between p1-md align-items-center bg-white">
                     <i class="bi bi-person-fill fs-1"></i>
                     <div>
-                      <span className="text-muted small-text">Applicants</span>
+                      <h2 className="text-muted small-text">Applicants</h2>
                       <h2>
                         {data["Loan Status"]["Approved"] +
                           data["Loan Status"]["Not Approved"]}
@@ -56,10 +62,13 @@ function Home() {
               <div className="card-body text-center">
                 <div className="card-title "></div>
                 <div className="card-subtitle custom-card-subtitle">
-                  <div className="d-flex justify-content-between p1-md align-items-center bg-white">
+                  <div
+                    className="d-flex justify-content-between p1-md align-items-center bg-white"
+                    style={{ color: approvedColor }}
+                  >
                     <i class="bi bi-person-fill fs-1"></i>
                     <div>
-                      <span className="text-muted small-text">Approved</span>
+                      <h2 className="small-text">Approved</h2>
                       <h2>{data["Loan Status"]["Approved"]}</h2>
                     </div>
                   </div>
@@ -76,12 +85,13 @@ function Home() {
               <div className="card-body text-center">
                 <div className="card-title"></div>
                 <div className="card-subtitle">
-                  <div className="d-flex justify-content-between p1-md align-items-center bg-white">
+                  <div
+                    className="d-flex justify-content-between p1-md align-items-center bg-white"
+                    style={{ color: notApprovedColor }}
+                  >
                     <i class="bi bi-person-fill fs-1"></i>
                     <div>
-                      <span className="text-muted  small-text">
-                        Not approved
-                      </span>
+                      <h2 className="small-text">Not approved</h2>
                       <h2>{data["Loan Status"]["Not Approved"]}</h2>
                     </div>
                   </div>
@@ -91,16 +101,58 @@ function Home() {
           </div>
         </div>
 
-        <div className="d-sm-none">
+        <div className="d-lg-none">
           <TargetButtons />
         </div>
 
         <div className="row">
           <div className="col-12 col-md-6 p-4">
+            <DonutChartWithImage
+              genderIcon={femaleIcon}
+              gender={"Female"}
+              title={"Female and Loan"}
+            />
+          </div>
+          <div className="col-12 col-md-6 p-4">
+            <DonutChartWithImage
+              genderIcon={maleIcon}
+              gender={"Male"}
+              title={"Male and Loan"}
+            />
+          </div>
+          <div className="col-12 col-md-6 p-4">
             <ApexPie />
           </div>
           <div className="col-12 col-md-6 p-3">
-            <ApexBar ref={childRef} />
+            <ApexBar
+              ref={childRef}
+              feature="Loan Approval based on Credit History"
+            />
+          </div>
+
+          <div className="col-12 col-md-6 p-3">
+            <ApexBar
+              ref={childRef}
+              feature="Property Area Influences Loan Approval"
+            />
+          </div>
+          <div className="col-12 col-md-6 p-3">
+            <ApexBar
+              ref={childRef}
+              feature="Loan Status based on Marital Status"
+            />
+          </div>
+          <div className="col-12 col-md-6 p-3">
+            <ApexBar
+              ref={childRef}
+              feature="Applicant education and loan approval status"
+            />
+          </div>
+          <div className="col-12 col-md-6 p-3">
+            <ApexBar
+              ref={childRef}
+              feature="Loan approval based on employment status"
+            />
           </div>
         </div>
 

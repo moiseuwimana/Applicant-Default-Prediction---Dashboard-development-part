@@ -50,6 +50,7 @@ function CoefficientBarChart() {
           },
         },
       },
+      colors:['#00D000']
 
     },
     series: [
