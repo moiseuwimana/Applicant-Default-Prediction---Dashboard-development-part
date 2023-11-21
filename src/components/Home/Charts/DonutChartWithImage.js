@@ -8,7 +8,6 @@ const ExampleChart = ({ genderIcon, title, gender }) => {
   const { data } = useData();
   const { approvedColor, notApprovedColor } = useIdentifiers();
 
-  console.log(data);
 
   const chartData = {
     series: Object.values(data["Gender-dependent loan status"][gender]),

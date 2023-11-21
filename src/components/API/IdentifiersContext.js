@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
+
 // Create a context
 const IdentifiersContext = createContext();
 
@@ -37,8 +38,26 @@ export function IdentifiersProvider({ children }) {
       selected === "Not Approved" ? "rgba(200,0,0,1)" : "rgba(200,0,0,0.1)";
   }
 
+
+  
+
+  const breakPoint = 576;
+  const extraSmallBreakPoint = 285;
+  const [isMobile, setMobile] = React.useState(window.innerWidth<breakPoint);
+  const [isExtraSmall, setExtraSmall] = React.useState(window.innerWidth<extraSmallBreakPoint)
+  React.useEffect(()=>{
+    const handleResize=()=>{
+      setMobile(window.innerWidth<breakPoint);
+      setExtraSmall(window.innerWidth<extraSmallBreakPoint);
+    }
+    window.addEventListener('resize',handleResize);
+    return ()=>{
+      window.removeEventListener('resize',handleResize)
+    }
+  },[])
+
   return (
-    <IdentifiersContext.Provider value={{ seriesVisibility, toggleDataSeries, resetBar, selected, approvedColor, notApprovedColor }}>
+    <IdentifiersContext.Provider value={{ seriesVisibility, toggleDataSeries, resetBar, selected, approvedColor, notApprovedColor, isMobile, isExtraSmall }}>
       {children}
     </IdentifiersContext.Provider>
   );

@@ -12,11 +12,17 @@ import { useData } from "../API/DataContext";
 import { useIdentifiers } from "../API/IdentifiersContext";
 
 import DonutChartWithImage from "./Charts/DonutChartWithImage";
+
 import femaleIcon from "./female.png";
 import maleIcon from "./male.png";
 
+
+
+
+
 function Home() {
-  const { approvedColor, notApprovedColor } = useIdentifiers();
+  const {data,featuresOnBarChart}=useData()
+  const { approvedColor, notApprovedColor, isMobile} = useIdentifiers();
   const childRef = useRef();
   // Function to trigger the function in ChildComponent
   const triggerChildFunction = (cardName) => {
@@ -25,7 +31,8 @@ function Home() {
   const triggerChildFunction_reset = () => {
     childRef.current.resetBar();
   };
-  const { data } = useData();
+  
+
 
   return (
     <div className="p-3 bg-light">
@@ -102,7 +109,7 @@ function Home() {
         </div>
 
         <div className="d-lg-none">
-          <TargetButtons />
+          <TargetButtons isMobile={isMobile}/>
         </div>
 
         <div className="row">
@@ -113,6 +120,7 @@ function Home() {
               title={"Female and Loan"}
             />
           </div>
+
           <div className="col-12 col-md-6 p-4">
             <DonutChartWithImage
               genderIcon={maleIcon}
@@ -120,43 +128,28 @@ function Home() {
               title={"Male and Loan"}
             />
           </div>
+
+
+
+
           <div className="col-12 col-md-6 p-4">
-            <ApexPie />
-          </div>
-          <div className="col-12 col-md-6 p-3">
-            <ApexBar
-              ref={childRef}
-              feature="Loan Approval based on Credit History"
-            />
+            <ApexPie mobile={false}/>
           </div>
 
-          <div className="col-12 col-md-6 p-3">
+          
+          {featuresOnBarChart.map((feature, index)=>{
+            return (
+              <div key={index} className="col-12 col-md-6 p-3">
             <ApexBar
               ref={childRef}
-              feature="Property Area Influences Loan Approval"
+              feature={feature['feature']}
+              icons={feature['icons']}
+
             />
           </div>
-          <div className="col-12 col-md-6 p-3">
-            <ApexBar
-              ref={childRef}
-              feature="Loan Status based on Marital Status"
-            />
-          </div>
-          <div className="col-12 col-md-6 p-3">
-            <ApexBar
-              ref={childRef}
-              feature="Applicant education and loan approval status"
-            />
-          </div>
-          <div className="col-12 col-md-6 p-3">
-            <ApexBar
-              ref={childRef}
-              feature="Loan approval based on employment status"
-            />
-          </div>
+            )
+          })}
         </div>
-
-        {/* <PieChart /> */}
       </div>
     </div>
   );

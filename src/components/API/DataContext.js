@@ -1,6 +1,20 @@
 // DataContext.js
 import { createContext, useContext, useState, useEffect } from "react";
 
+import creditHistorySvg from "../../svg/0reservation-completed-icon.svg";
+import noCreditHistorySvg from "../../svg/0remove-date-calendar-icon.svg";
+import ruralSvg from '../../svg/0nature-landscape-icon.svg';
+import semiurbanSvg from '../../svg/0village-icon.svg';
+import urbanSvg from '../../svg/town-city-icon.svg';
+import mariedSvg from '../../svg/hugging-romance-icon.svg';
+import notMarriedSvg from '../../svg/0man-woman-toilet-icon.svg'
+import graduateSvg from '../../svg/student-boy-icon.svg';
+import notGraduateSvg from '../../svg/0young-icon.svg';
+import selfEmployed from '../../svg/businessman-task-time-icon.svg';
+import notSelfEmployed from '../../svg/0construction-engineer-icon.svg'
+
+
+
 const DataContext = createContext();
 
 export function DataProvider({ children }) {
@@ -39,8 +53,30 @@ export function DataProvider({ children }) {
     console.log("Loading data...");
   }
   if (data) {
+    const featuresOnBarChart = [
+      {
+        feature: "Loan Approval based on Credit History",
+        icons:[creditHistorySvg,noCreditHistorySvg]
+      },
+      {
+        feature:"Property Area Influences Loan Approval",
+        icons:[ruralSvg,semiurbanSvg,urbanSvg]
+      },
+      {
+        feature:"Loan Status based on Marital Status",
+        icons:[mariedSvg,notMarriedSvg]
+      },
+      {
+        feature:"Applicant education and loan approval status",
+        icons:[graduateSvg,notGraduateSvg]
+      },
+      {
+        feature:"Loan approval based on employment status",
+        icons:[notSelfEmployed,selfEmployed]
+      }
+    ]
     return (
-      <DataContext.Provider value={{ data}}>
+      <DataContext.Provider value={{ data, featuresOnBarChart}}>
         {children}
       </DataContext.Provider>
     );

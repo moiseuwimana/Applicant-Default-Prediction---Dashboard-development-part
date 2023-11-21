@@ -1,13 +1,14 @@
 import React from "react";
 import CoefficientBarChart from "./CoefficientBarChart";
 import "./Report.css";
-import CoefficientBarChartMobile from "./CoefficientBarChartMobile";
-import creditImg from "./credit_score.jpg";
-import educationImg from "./graduation.jpg";
-import familyImg from "./family.jpg";
-import marriageImg from "./marriage.jpg";
-import incomeImg from "./income.jpeg";
-import neighborhoodImg from './neighborhood.jpg'
+import creditImg from "./Images/credit_score.jpg";
+import educationImg from "./Images/graduation.jpg";
+import familyImg from "./Images/family.jpg";
+import marriageImg from "./Images/marriage.jpg";
+import incomeImg from "./Images/income.jpeg";
+import neighborhoodImg from './Images/neighborhood.jpg'
+
+
 
 const Report = () => {
   return (
@@ -44,19 +45,14 @@ const Report = () => {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title"></h5>
-              <div className="d-md-none">
-                <CoefficientBarChartMobile />
-              </div>
-              <div className="d-none d-md-block">
-                <CoefficientBarChart />
-              </div>
+                <CoefficientBarChart />          
             </div>
           </div>
         </div>
         <div className="col-lg-4">
-          <div className="card card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height">
+          <div className="card border-0 p-3 mb-5 bg-transparent">
             <div className="card-body">
-              <h5 className="card-title">About chart</h5>
+              <h5 className="card-title text-center">About chart</h5>
               <p>
                 The bar chart displays the influence of various features. When a
                 bar points up, it means that the corresponding feature has a

@@ -3,7 +3,7 @@ import "./TargetButtons.css";
 
 import { useIdentifiers } from "../API/IdentifiersContext";
 
-const TargetButtons = () => {
+const TargetButtons = ({isMobile}) => {
   const [isSticky, setSticky] = useState(false);
   const initialOffset = useRef(0); // Using useRef for initialOffset. PURPOSE: holding numerical offset data
   const stickyDivRef = useRef(null); // initiate to point to any DOM element is prepared to reference a DOM element later when the component renders. PURPOSE: Referencing a DOM element.
@@ -46,7 +46,7 @@ const TargetButtons = () => {
             <div
               className={`btn btn-sm  bg-light text-center ${
                 isSticky ? "sticky-custom-width-btn" : "custom-width-btn"
-              }`}
+              } ${isMobile?"mobile-extra":""}`}
               style={{ border: "2px solid rgba(0,0,0,0.2)",height: '50px' }}
               onClick={resetBar}
             >
@@ -81,7 +81,7 @@ const TargetButtons = () => {
                 <div 
                 className={`btn btn-sm  bg-light text-center ${
                   isSticky ? "sticky-custom-width-btn" : "custom-width-btn"
-                }`}
+                } ${isMobile?"mobile-extra":""}`}
                 style={style}>
                   {seriesName}
                 </div>
