@@ -55,23 +55,23 @@ export function DataProvider({ children }) {
   if (data) {
     const featuresOnBarChart = [
       {
-        feature: "Loan Approval based on Credit History",
+        feature: "Loan Approval & Credit History",
         icons:[creditHistorySvg,noCreditHistorySvg]
       },
       {
-        feature:"Property Area Influences Loan Approval",
+        feature:"Property Area & Loan Approval",
         icons:[ruralSvg,semiurbanSvg,urbanSvg]
       },
       {
-        feature:"Loan Status based on Marital Status",
+        feature:"Marital Status & Loan Status",
         icons:[mariedSvg,notMarriedSvg]
       },
       {
-        feature:"Applicant education and loan approval status",
+        feature:"Applicant Education & Loan Status",
         icons:[graduateSvg,notGraduateSvg]
       },
       {
-        feature:"Loan approval based on employment status",
+        feature:"Loan Approval & Employment Status",
         icons:[notSelfEmployed,selfEmployed]
       }
     ]

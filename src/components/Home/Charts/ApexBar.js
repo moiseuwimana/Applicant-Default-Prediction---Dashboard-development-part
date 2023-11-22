@@ -15,9 +15,9 @@ const ApexBar = forwardRef(({feature,icons}, ref) => {
   }));
 
 
-
-  // const y = 
-  const categories = Object.keys(data[feature]);
+ 
+  const categories = Object.keys(data['barChart_Data'][feature]);
+  const Data = Object.values(data['barChart_Data'][feature]);
 
   const annotationSvg = categories.map((categories, index) => (
     {
@@ -38,16 +38,14 @@ const ApexBar = forwardRef(({feature,icons}, ref) => {
   const updatedSeries = [
     {
       name: "Approved",
-      data: Object.values(
-        data[feature]).map(item=>item['Approved']),
+      data: Data.map(item=>item['Approved']),
       color: seriesVisibility["Approved"]
         ? "rgba(0,150,0,1)"
         : "rgba(0,150,0,0.1)",
     },
     {
       name: "Not Approved",
-      data: Object.values(
-        data[feature]).map(item=>item['Not Approved']),
+      data: Data.map(item=>item['Not Approved']),
       color: seriesVisibility["Not Approved"]
         ? "rgba(200,0,0,1)"
         : "rgba(200,0,0,0.1)",

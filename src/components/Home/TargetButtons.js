@@ -3,15 +3,15 @@ import "./TargetButtons.css";
 
 import { useIdentifiers } from "../API/IdentifiersContext";
 
-const TargetButtons = ({isMobile}) => {
+const TargetButtons = () => {
   const [isSticky, setSticky] = useState(false);
   const initialOffset = useRef(0); // Using useRef for initialOffset. PURPOSE: holding numerical offset data
   const stickyDivRef = useRef(null); // initiate to point to any DOM element is prepared to reference a DOM element later when the component renders. PURPOSE: Referencing a DOM element.
-  const { seriesVisibility, toggleDataSeries, resetBar, approvedColor, notApprovedColor} = useIdentifiers();
+  const { seriesVisibility, toggleDataSeries, resetBar, approvedColor, notApprovedColor, isMobile} = useIdentifiers();
 
   useEffect(() => {
     const handleScroll = () => {
-      const navBarHeight = 55;
+      const navBarHeight = 58;
       if (stickyDivRef.current) {
         const offset = stickyDivRef.current.offsetTop - navBarHeight;
 

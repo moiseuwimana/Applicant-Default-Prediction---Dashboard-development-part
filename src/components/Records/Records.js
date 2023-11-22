@@ -1,10 +1,6 @@
 import React, { useMemo } from "react";
 import { useData } from "../API/DataContext";
-// import {
-//   useReactTable,
-//   getCoreRowModel,
-//   flexRender,
-// } from "@tanstack/react-table";
+
 import {
   useTable,
   useGlobalFilter,
@@ -17,7 +13,7 @@ import GlobalFilter from "./GlobalFilter";
 import ColumnFilter from "./ColumnFilter";
 import { Checkbox } from "./Checkbox";
 
-function Records2() {
+function Records() {
   const { data } = useData();
   // Move COLUMNS and columns outside the conditional blocks
   // const COLUMNS = Object.keys(data.data[0]).map((name) => ({
@@ -340,4 +336,4 @@ function Records2() {
   );
 }
 
-export default Records2;
+export default Records;

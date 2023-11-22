@@ -7,7 +7,7 @@ import Report from "./components/Report/Report";
 
 
 
-import Records2 from "./components/Records/Records2";
+import Records from "./components/Records/Records";
 
 
 
@@ -45,9 +45,7 @@ function App() {
               path="/records"
               element={
                 <>
-                  {/* <Table /> */}
-                  <Records2 />
-                  {/* <Records /> */}
+                  <Records />
                 </>
               }
             ></Route>

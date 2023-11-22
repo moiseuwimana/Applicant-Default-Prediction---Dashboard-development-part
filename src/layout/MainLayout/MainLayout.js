@@ -22,17 +22,16 @@ function MainLayout({ children }) {
 
   return (
     <BrowserRouter>
-      <div>
-        <div className="d-flex">
-          <div className="w-auto">
-            <SideBar toggle={toggle} />
-          </div>
-          <div className="col">
-            <NavBar toggle={() => setToggle(!toggle)} />
-            {children}
-          </div>
+      <div className="d-flex">
+        <div className="w-auto">
+          <SideBar toggle={toggle} />
+        </div>
+        <div className="col">
+          <NavBar toggle={() => setToggle(!toggle)} />
+          {children}
         </div>
       </div>
+
       <Footer />
     </BrowserRouter>
   );

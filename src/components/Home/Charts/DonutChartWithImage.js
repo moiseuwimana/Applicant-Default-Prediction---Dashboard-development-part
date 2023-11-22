@@ -10,13 +10,13 @@ const ExampleChart = ({ genderIcon, title, gender }) => {
 
 
   const chartData = {
-    series: Object.values(data["Gender-dependent loan status"][gender]),
+    series: Object.values(data['barChart_Data']["Gender & Loan Status"][gender]),
 
     options: {
       chart: {
         type: "donut",
       },
-      labels: Object.keys(data["Gender-dependent loan status"][gender]),
+      labels: Object.keys(data['barChart_Data']["Gender & Loan Status"][gender]),
       legend: {
         show: false,
       },

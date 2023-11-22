@@ -1,16 +1,11 @@
 
 .sticky-div {
   padding: 20px;
-  /* transition: top 0.3s; */
 }
 
 .sticky {
-  /* position: fixed; */
 
-  margin-top: 55px; /*nav bar height*/
-  /* top: 0; */
-  /* width: 100%; */
-  /* z-index: 100; */
+  margin-top: 55px; 
   margin-left: -53px;
 }
 .not-sticky{
@@ -20,7 +15,7 @@
   padding: 35px
 }
 .sticky-custom-width-btn {
-  width: 80px; /*Set your desired width*/
+  width: 80px; 
   margin-left:0px;
   padding:0px;
   display: flex;
@@ -28,7 +23,7 @@
   align-items: center;
 }
 .custom-width-btn {
-  width: 80px; /*Set your desired width*/
+  width: 80px; 
   margin-right:10px;
   display: flex;
   justify-content: center;

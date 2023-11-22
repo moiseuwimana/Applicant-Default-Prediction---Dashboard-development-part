@@ -22,7 +22,7 @@ import maleIcon from "./male.png";
 
 function Home() {
   const {data,featuresOnBarChart}=useData()
-  const { approvedColor, notApprovedColor, isMobile} = useIdentifiers();
+  const { approvedColor, notApprovedColor} = useIdentifiers();
   const childRef = useRef();
   // Function to trigger the function in ChildComponent
   const triggerChildFunction = (cardName) => {
@@ -47,7 +47,7 @@ function Home() {
                 <div className="card-title"></div>
                 <div className="card-subtitle">
                   <div className="d-flex justify-content-between p1-md align-items-center bg-white">
-                    <i class="bi bi-person-fill fs-1"></i>
+                    <i className="bi bi-person-fill fs-1"></i>
                     <div>
                       <h2 className="text-muted small-text">Applicants</h2>
                       <h2>
@@ -73,7 +73,7 @@ function Home() {
                     className="d-flex justify-content-between p1-md align-items-center bg-white"
                     style={{ color: approvedColor }}
                   >
-                    <i class="bi bi-person-fill fs-1"></i>
+                    <i className="bi bi-person-fill fs-1"></i>
                     <div>
                       <h2 className="small-text">Approved</h2>
                       <h2>{data["Loan Status"]["Approved"]}</h2>
@@ -96,7 +96,7 @@ function Home() {
                     className="d-flex justify-content-between p1-md align-items-center bg-white"
                     style={{ color: notApprovedColor }}
                   >
-                    <i class="bi bi-person-fill fs-1"></i>
+                    <i className="bi bi-person-fill fs-1"></i>
                     <div>
                       <h2 className="small-text">Not approved</h2>
                       <h2>{data["Loan Status"]["Not Approved"]}</h2>
@@ -109,7 +109,7 @@ function Home() {
         </div>
 
         <div className="d-lg-none">
-          <TargetButtons isMobile={isMobile}/>
+          <TargetButtons/>
         </div>
 
         <div className="row">
@@ -133,7 +133,7 @@ function Home() {
 
 
           <div className="col-12 col-md-6 p-4">
-            <ApexPie mobile={false}/>
+            <ApexPie />
           </div>
 
           
