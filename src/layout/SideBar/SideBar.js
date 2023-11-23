@@ -71,9 +71,9 @@ function SideBar({ toggle }) {
           >
             <Link to="/report" className="p-1 text-decoration-none text-white">
               <div className="row">
-                <i className="bi bi-book-half me-3 fs-4 d-flex justify-content-center"></i>
+                <i className="bi bi-graph-up-arrow me-3 fs-4 d-flex justify-content-center"></i>
                 <span className="fs-6 justify-content-center d-flex">
-                  <strong>Report</strong>
+                  <strong>Prediction</strong>
                 </span>
               </div>
             </Link>

@@ -15,7 +15,7 @@ const Report = () => {
     <div className="container bg-light p-4">
       <div className="row">
         <div className="col">
-          <h2 className="text-center display-2 my-2">Report</h2>
+          <h1 className="text-center my-2 text-muted">APPLICANT DEFAULT PREDICTION</h1>
           <h2 className="text-center text-muted text-lg-start my-4">
           Executive Summary
           </h2>
@@ -84,9 +84,8 @@ const Report = () => {
 
       <div className="row justify-content-center g-2">
         <div className="col-lg-8">
-          <div className="card">
+          <div className="card mt-2">
             <div className="card-body">
-              <h5 className="card-title"></h5>
                 <CoefficientBarChart />          
             </div>
           </div>
@@ -120,7 +119,7 @@ const Report = () => {
         <div className="col-md-6 col-lg-5 col-xl-4">
           <div className="card card-hover-shadow p mb-5 bg-body rounded card-equal-height">
             <div className="inner">
-              <img className="card-img-top" src={creditImg} />
+              <img className="card-img-top" src={creditImg} alt='creditImg' />
             </div>
             <div className="card-body">
               <h5 className="card-title text-center">1. Credit History</h5>
@@ -134,7 +133,7 @@ const Report = () => {
         <div className="col-md-6 col-lg-5 col-xl-4">
           <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
             <div className="inner">
-              <img className="card-img-top" src={educationImg} />
+              <img className="card-img-top" src={educationImg} alt='educationImg' />
             </div>
             <div className="card-body">
               <h5 className="card-title text-center">
@@ -149,7 +148,7 @@ const Report = () => {
         <div className="col-md-6 col-lg-5 col-xl-4">
           <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
             <div className="inner">
-              <img className="card-img-top" src={familyImg} />
+              <img className="card-img-top" src={familyImg} alt="familyImg" />
             </div>
             <div className="card-body">
               <h5 className="card-title text-center">3. Dependents</h5>
@@ -162,7 +161,7 @@ const Report = () => {
         <div className="col-md-6 col-lg-5 col-xl-4">
           <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
             <div className="inner">
-              <img className="card-img-top" src={marriageImg} />
+              <img className="card-img-top" src={marriageImg} alt="marriageImg" />
             </div>
             <div className="card-body">
               <h5 className="card-title text-center">4. Marital Status</h5>
@@ -175,7 +174,7 @@ const Report = () => {
         <div className="col-md-6 col-lg-5 col-xl-4">
           <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
             <div className="inner">
-              <img className="card-img-top" src={incomeImg} />
+              <img className="card-img-top" src={incomeImg} alt="incomeImg"/>
             </div>
             <div className="card-body">
               <h5 className="card-title text-center">5. Financial Metrics</h5>
@@ -188,7 +187,7 @@ const Report = () => {
         <div className="col-md-6 col-lg-5 col-xl-4">
           <div className="card card-hover-shadow mb-5 bg-body rounded card-equal-height">
             <div className="inner">
-              <img className="card-img-top" src={neighborhoodImg} />
+              <img className="card-img-top" src={neighborhoodImg} alt="neighborhoodImg"/>
             </div>
             <div className="card-body">
               <h5 className="card-title text-center">6. Property Area</h5>

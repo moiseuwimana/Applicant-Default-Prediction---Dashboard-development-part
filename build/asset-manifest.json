@@ -1,15 +1,41 @@
 {
   "files": {
-    "main.css": "/static/css/main.48cca53e.css",
-    "main.js": "/static/js/main.2f34e4ca.js",
+    "main.css": "/static/css/main.831fbc89.css",
+    "main.js": "/static/js/main.93aec629.js",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.449ad8adf6ae0424b7ed.woff",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.dea24bf5a7646d8b84e7.woff2",
+    "static/media/credit_score.jpg": "/static/media/credit_score.47a8e46c0f6c56eb8148.jpg",
+    "static/media/neighborhood.jpg": "/static/media/neighborhood.a1ea6baca2fdd9819980.jpg",
+    "static/media/logo.png": "/static/media/logo.438bed4cc8f89fb5393b.png",
+    "static/media/graduation.jpg": "/static/media/graduation.f78b4dde1dc644e44be3.jpg",
+    "static/media/marriage.jpg": "/static/media/marriage.638666ac60ed83408e7a.jpg",
+    "static/media/income.jpeg": "/static/media/income.b168697f4b5422e55156.jpeg",
+    "static/media/family.jpg": "/static/media/family.60681872011593fd1e0a.jpg",
+    "static/media/female.png": "/static/media/female.e150f04921bfd297adfe.png",
+    "static/media/male.png": "/static/media/male.940c8a361696f4e99b0b.png",
+    "static/media/kids-children-icon.svg": "/static/media/kids-children-icon.9f330d754153384c39372ac5157866ae.svg",
+    "static/media/0nature-landscape-icon.svg": "/static/media/0nature-landscape-icon.ead7f3f429e87be5f137f30309dab527.svg",
+    "static/media/0village-icon.svg": "/static/media/0village-icon.0f2436adb0bc13060771cd6ce110a63f.svg",
+    "static/media/debt-icon.svg": "/static/media/debt-icon.c9d4a09dd0c72cc6f79ed0ffac765bef.svg",
+    "static/media/gender.svg": "/static/media/gender.d32f31d339aab3b9d50ddcebf897ef24.svg",
+    "static/media/town-city-icon.svg": "/static/media/town-city-icon.7ff6bcc3e4cdaf24fd312421a9dc4a9a.svg",
+    "static/media/0young-icon.svg": "/static/media/0young-icon.c92dc1bfd697bbb02ffc195a5d019bb3.svg",
+    "static/media/0remove-date-calendar-icon.svg": "/static/media/0remove-date-calendar-icon.c466267797111dcc30270d774303f418.svg",
+    "static/media/businessman-task-time-icon.svg": "/static/media/businessman-task-time-icon.573832448aa51cd908e023930c7b86ba.svg",
+    "static/media/student-boy-icon.svg": "/static/media/student-boy-icon.e6c6a5321e9e7cd9f3faf48ee473b0c4.svg",
+    "static/media/hugging-romance-icon.svg": "/static/media/hugging-romance-icon.d86d40104f2b95e883ced264b0c95182.svg",
+    "static/media/payday-icon.svg": "/static/media/payday-icon.fdf7f3be451b107512fbc88f37213915.svg",
+    "static/media/hand-money-dollar-coin-icon.svg": "/static/media/hand-money-dollar-coin-icon.173fe69345cd4ba2c79fe055fd5a61d3.svg",
+    "static/media/0reservation-completed-icon.svg": "/static/media/0reservation-completed-icon.43ea674cdf7cd9601ff9b7b76f8538ea.svg",
+    "static/media/0construction-engineer-icon.svg": "/static/media/0construction-engineer-icon.b24e55fa77256d06bd1fa18a70e4ba10.svg",
+    "static/media/alarm-icon.svg": "/static/media/alarm-icon.a4bc1b08ea80e3e9c59dfc27a9fdb4a4.svg",
+    "static/media/0man-woman-toilet-icon.svg": "/static/media/0man-woman-toilet-icon.18152f52959d640ba2d97573781d9604.svg",
     "index.html": "/index.html",
-    "main.48cca53e.css.map": "/static/css/main.48cca53e.css.map",
-    "main.2f34e4ca.js.map": "/static/js/main.2f34e4ca.js.map"
+    "main.831fbc89.css.map": "/static/css/main.831fbc89.css.map",
+    "main.93aec629.js.map": "/static/js/main.93aec629.js.map"
   },
   "entrypoints": [
-    "static/css/main.48cca53e.css",
-    "static/js/main.2f34e4ca.js"
+    "static/css/main.831fbc89.css",
+    "static/js/main.93aec629.js"
   ]
 }
