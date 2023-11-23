@@ -3,7 +3,7 @@ import './NavBar.css';
 
 function NavBar({toggle}) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top custom-navbar">
       <div className="container-fluid">
         <button className="navbar-brand d-none d-lg-block bg-transparent border-0">
           Dashboard

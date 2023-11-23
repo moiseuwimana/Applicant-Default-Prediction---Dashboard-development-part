@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./SideBar.css";
 import { Link } from "react-router-dom";
 import logo from "./logo.png";
+import reportPdf from '../../files/Applicant-default-prediction.pdf';
 
 function SideBar({ toggle }) {
   const [active, setActive] = React.useState(1);
@@ -20,6 +21,24 @@ function SideBar({ toggle }) {
   useEffect(() => {
     localStorage.setItem("active", active);
   }, [active]);
+
+
+
+  const downloadFileAtURL = (url)=>{
+    fetch(url)
+    .then(response=>response.blob())
+    .then(blob=>{
+      const blobURL = window.URL.createObjectURL(new Blob([blob]))
+      const fileName = url.split("/").pop();
+      const aTag = document.createElement("a");
+      aTag.href = blobURL;
+      aTag.setAttribute("download",fileName);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+
+    })
+  }
 
   return (
     <div
@@ -65,6 +84,7 @@ function SideBar({ toggle }) {
               </div>
             </Link>
           </li>
+
           <li
             className={active === 4 ? "active nav-item p-2" : "nav-item p-2"}
             onClick={(e) => setActive(4)}
@@ -77,6 +97,19 @@ function SideBar({ toggle }) {
                 </span>
               </div>
             </Link>
+          </li>
+
+          <li
+            className={ "nav-item p-2"}   
+          >
+            <button className="p-1 bg-transparent text-white border-0 p-4" onClick={()=>{downloadFileAtURL(reportPdf)}}>
+              <div className="row">
+                <i className="bi bi-file-earmark-arrow-down-fill me-3 fs-4 d-flex justify-content-center"></i>
+                <span className="fs-6 justify-content-center d-flex">
+                  <strong>Technical Report</strong>
+                </span>
+              </div>
+            </button>
           </li>
         </ul>
       </div>
