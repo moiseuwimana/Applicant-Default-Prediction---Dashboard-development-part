@@ -22,7 +22,7 @@ import maleIcon from "./male.png";
 
 function Home() {
   const {data,featuresOnBarChart}=useData()
-  const { approvedColor, notApprovedColor} = useIdentifiers();
+  const { approvedColor, notApprovedColor, allApplicantColor} = useIdentifiers();
   const childRef = useRef();
   // Function to trigger the function in ChildComponent
   const triggerChildFunction = (cardName) => {
@@ -43,13 +43,13 @@ function Home() {
               className="card cursor-pointer card-hover-shadow p-3 mb-5 bg-body rounded card-equal-height"
               onClick={triggerChildFunction_reset}
             >
-              <div className="card-body text-center">
+              <div className="card-body text-center" style={{color:allApplicantColor}}>
                 <div className="card-title"></div>
                 <div className="card-subtitle">
                   <div className="d-flex justify-content-between p1-md align-items-center bg-white">
                     <i className="bi bi-person-fill fs-1"></i>
                     <div>
-                      <h2 className="text-muted small-text">Applicants</h2>
+                      <h2 className=" small-text">Applicants</h2>
                       <h2>
                         {data["Loan Status"]["Approved"] +
                           data["Loan Status"]["Not Approved"]}

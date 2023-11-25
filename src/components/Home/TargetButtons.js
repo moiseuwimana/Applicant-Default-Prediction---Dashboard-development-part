@@ -7,7 +7,7 @@ const TargetButtons = () => {
   const [isSticky, setSticky] = useState(false);
   const initialOffset = useRef(0); // Using useRef for initialOffset. PURPOSE: holding numerical offset data
   const stickyDivRef = useRef(null); // initiate to point to any DOM element is prepared to reference a DOM element later when the component renders. PURPOSE: Referencing a DOM element.
-  const { seriesVisibility, toggleDataSeries, resetBar, approvedColor, notApprovedColor, isMobile} = useIdentifiers();
+  const { seriesVisibility, toggleDataSeries, resetBar, approvedColor, notApprovedColor, allApplicantColor, isMobile, selected} = useIdentifiers();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +33,8 @@ const TargetButtons = () => {
     };
   }, [isSticky, initialOffset]);
 
+ 
+
   return (
     <div className="container-fluid">
       <div className="container-fluid ">
@@ -47,10 +49,19 @@ const TargetButtons = () => {
               className={`btn btn-sm  bg-light text-center ${
                 isSticky ? "sticky-custom-width-btn" : "custom-width-btn"
               } ${isMobile?"mobile-extra":""}`}
-              style={{ border: "2px solid rgba(0,0,0,0.2)",height: '50px' }}
+              style={
+                { 
+                  border: `2px solid ${allApplicantColor}`,
+                  height: '50px',
+                  boxShadow: `inset 0 0 10px rgba(0,0,0,0.6)`,
+                  transition: 'box-shadow 1.0s ease',
+                  
+                  color: selected==="All Applicants"? "rgba(0,0,0,1)" : "rgba(0,0,0,0.2)",
+                }
+              }
               onClick={resetBar}
             >
-              All
+              All Applicants
             </div>
           </div>
 
@@ -58,16 +69,15 @@ const TargetButtons = () => {
           {["Approved", "Not Approved"].map((seriesName) => {
             const borderColor =
               seriesName === "Approved"
-                ? `2px solid ${approvedColor}`
-                : `2px solid ${notApprovedColor}`;
+                ? `${approvedColor}`
+                : `${notApprovedColor}`;
 
             const style = {
               cursor: "pointer",
-              border: borderColor,
+              border: `2px solid ${borderColor}`,
+              boxShadow: `inset 0 0 10px ${borderColor}`,
+              transition: 'box-shadow 1.0s ease',
               marginRight: "5px",
-              textDecoration: seriesVisibility[seriesName]
-                ? ""
-                : "line-through",
               color: seriesVisibility[seriesName] ? "black" : "rgba(0,0,0,0.2)",
               height: '50px'             
             };
@@ -79,7 +89,7 @@ const TargetButtons = () => {
                 onClick={() => toggleDataSeries(seriesName)}
               >
                 <div 
-                className={`btn btn-sm  bg-light text-center ${
+                className={`btn btn-sm text-center ${
                   isSticky ? "sticky-custom-width-btn" : "custom-width-btn"
                 } ${isMobile?"mobile-extra":""}`}
                 style={style}>

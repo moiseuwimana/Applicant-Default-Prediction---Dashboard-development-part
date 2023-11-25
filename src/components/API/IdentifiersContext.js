@@ -8,7 +8,7 @@ const IdentifiersContext = createContext();
 
 // Create a provider component
 export function IdentifiersProvider({ children }) {
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState('All Applicants');
   const [seriesVisibility, setSeriesVisibility] = useState({
     'Approved': true,
     'Not Approved': true,
@@ -23,20 +23,36 @@ export function IdentifiersProvider({ children }) {
     }));
   };
   const resetBar = ()=>{
-    setSelected('')
+    setSelected('All Applicants')
     setSeriesVisibility({
       'Approved': true,
       'Not Approved': true,
     })
   }
+  // initialy set the colors on first render and when all button is clicked
   let approvedColor = "rgba(0,150,0,1)";
   let notApprovedColor = "rgba(200,0,0,1)";
-  if (selected) {
-    approvedColor =
-      selected === "Approved" ? "rgba(0,150,0,1)" : "rgba(0,150,0,0.1)";
-    notApprovedColor =
+  let allApplicantColor = "rgba(0,0,0,1)";
+
+//  if (selected){
+//   approvedColor =
+//       selected === "Approved"? "rgba(0,150,0,1)" : "rgba(0,150,0,0.1)";
+//   notApprovedColor =
+//       selected === "Not Approved" ? "rgba(200,0,0,1)" : "rgba(200,0,0,0.1)";
+//   allApplicantColor = selected === "All Applicants" ? "rgba(0,0,0,1)" : "rgba(0,0,0,0.1)";
+//  }
+
+ if (selected==="All Applicants"){
+  approvedColor ="rgba(0,150,0,1)";
+  notApprovedColor ="rgba(200,0,0,1)";
+  allApplicantColor = "rgba(0,0,0,1)";
+ } else if (selected){
+  approvedColor =
+      selected === "Approved"? "rgba(0,150,0,1)" : "rgba(0,150,0,0.1)";
+  notApprovedColor =
       selected === "Not Approved" ? "rgba(200,0,0,1)" : "rgba(200,0,0,0.1)";
-  }
+  allApplicantColor = selected === "All Applicants" ? "rgba(0,0,0,1)" : "rgba(0,0,0,0.1)";
+ }
 
 
   
@@ -56,8 +72,10 @@ export function IdentifiersProvider({ children }) {
     }
   },[])
 
+
+
   return (
-    <IdentifiersContext.Provider value={{ seriesVisibility, toggleDataSeries, resetBar, selected, approvedColor, notApprovedColor, isMobile, isExtraSmall }}>
+    <IdentifiersContext.Provider value={{ seriesVisibility, toggleDataSeries, resetBar, selected, approvedColor, notApprovedColor, allApplicantColor, isMobile, isExtraSmall }}>
       {children}
     </IdentifiersContext.Provider>
   );
