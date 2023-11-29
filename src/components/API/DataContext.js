@@ -25,7 +25,7 @@ export function DataProvider({ children }) {
   useEffect(() => {
     // Define the URL of the API you want to fetch data from
     const apiUrl =
-      "https://moiseuwimana.github.io/Loan-approval-prediction---dataAPI-part/data.json";
+      "https://moiseuwimana.github.io/Applicant-Default-Prediction---dataAPI-part/data.json";
 
     // Use the fetch function to make the API request
     fetch(apiUrl)
